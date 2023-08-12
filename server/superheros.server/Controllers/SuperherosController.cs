@@ -5,7 +5,7 @@ using superheros.server.Services.Queries.SuperheroQueries;
 namespace superheros.server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("superheros")]
     public class SuperherosController : ControllerBase
     {
         private readonly ILogger<SuperherosController> _logger;
@@ -20,7 +20,7 @@ namespace superheros.server.Controllers
         [HttpGet]
         public async Task<ActionResult<IList<Superhero>>> GetAsync()
         {
-            var result = await _getAllSuperheros.GetAsync();
+            var result = await _getAllSuperheros.GetAsync(this.HttpContext.TraceIdentifier);
 
             var response = this.StatusCode(200,result as IList<Superhero>);
 

@@ -22,8 +22,10 @@ public class When_getting
     {
         //arrange
         var loggerMock = new Mock<ILogger<SuperherosController>>();
+        
         var getAllSuperherosMock = new Mock<IGetAllSuperheros>();
-        getAllSuperherosMock.Setup(x => x.GetAsync()).Returns(Task.FromResult(new List<Superhero>() as IList<Superhero>));
+        getAllSuperherosMock.Setup(x => x.GetAsync(It.IsAny<string>()))
+            .Returns(Task.FromResult(new List<Superhero>() as IList<Superhero>));
 
         var sut = new SuperherosController(loggerMock.Object, getAllSuperherosMock.Object);
 
@@ -42,6 +44,6 @@ public class When_getting
 
         Assert.IsNotNull(superheros);
 
-        Assert.AreEqual(superheros?.Count,0);
+        Assert.AreEqual(superheros?.Count, 0);
     }
 }
