@@ -11,6 +11,6 @@ public class GetAllSuperheros : IGetAllSuperheros
 {
     public Task<IList<Superhero>> GetAsync()
     {
-        throw new NotImplementedException();
+        return Task.FromResult(new List<Superhero>() as IList<Superhero>);
     }
 }
