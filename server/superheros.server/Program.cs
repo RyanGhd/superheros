@@ -1,25 +1,24 @@
+using Autofac;
+using Autofac.Builder;
+using Autofac.Extensions.DependencyInjection;
+using superheros.server;
+using superheros.server.Services;
+using superheros.server.Services.Queries.SuperheroQueries;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var startup = new Startup(builder.Configuration);
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Host.ConfigureServices(sc => startup.ConfigureServices(sc));
+
+var factory = new AutofacServiceProviderFactory(c => startup.ConfigureContainer(c));
+builder.Host.UseServiceProviderFactory(factory);
+//builder.Host.ConfigureContainer<ContainerBuilder>(c => startup.ConfigureContainer(c));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+startup.Configure(app,builder.Environment);
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+var sp = app.Services.GetService(typeof(IGetAllSuperheros));
 
 app.Run();
