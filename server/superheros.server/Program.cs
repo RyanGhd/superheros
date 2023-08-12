@@ -19,6 +19,6 @@ var app = builder.Build();
 
 startup.Configure(app,builder.Environment);
 
-var sp = app.Services.GetService(typeof(IGetAllSuperheros));
+var sp = app.Services.GetService(typeof(IGetAllSuperherosQuery));
 
 app.Run();

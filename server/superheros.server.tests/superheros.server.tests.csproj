@@ -8,7 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\superhero1.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\superhero1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="7.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Moq" Version="4.20.69" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -18,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Superhero_controller\" />
-    <Folder Include="Services\Queries\SuperheroQueries\" />
+    <Folder Include="Fixtures\" />
+    <Folder Include="Services\Platform\" />
   </ItemGroup>
 
   <ItemGroup>
