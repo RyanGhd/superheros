@@ -12,13 +12,13 @@ namespace superheros.server.tests.Fixtures;
 
 public class SuperheroControllerFixture
 {
-    private Mock<ILogger<SuperherosController>> _loggerMock;
+    private Mock<ILogger<SuperherosV1Controller>> _loggerMock;
     private Mock<IGetAllSuperherosQuery> _getAllSuperherosMock;
     private Mock<IGetSuperheroByIdQuery> _getSuperheroByIdQueryMock;
 
     public SuperheroControllerFixture Init()
     {
-        _loggerMock = new Mock<ILogger<SuperherosController>>();
+        _loggerMock = new Mock<ILogger<SuperherosV1Controller>>();
 
         _getAllSuperherosMock = new Mock<IGetAllSuperherosQuery>();
        
@@ -47,9 +47,9 @@ public class SuperheroControllerFixture
         return this;
     }
 
-    public SuperherosController Build()
+    public SuperherosV1Controller Build()
     {
-        var instance = new SuperherosController(_loggerMock.Object, _getAllSuperherosMock.Object,
+        var instance = new SuperherosV1Controller(_loggerMock.Object, _getAllSuperherosMock.Object,
             _getSuperheroByIdQueryMock.Object);
         
         return instance;

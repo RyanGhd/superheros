@@ -5,14 +5,14 @@ using superheros.server.Services.Queries.SuperheroQueries;
 namespace superheros.server.Controllers
 {
     [ApiController]
-    [Route("superheros")]
-    public class SuperherosController : ControllerBase
+    [Route("v1/superheros")]
+    public class SuperherosV1Controller : ControllerBase
     {
-        private readonly ILogger<SuperherosController> _logger;
+        private readonly ILogger<SuperherosV1Controller> _logger;
         private readonly IGetAllSuperherosQuery _getAllSuperheros;
         private readonly IGetSuperheroByIdQuery _getSuperheroByIdQuery;
 
-        public SuperherosController(ILogger<SuperherosController> logger, IGetAllSuperherosQuery getAllSuperheros, IGetSuperheroByIdQuery getSuperheroByIdQuery)
+        public SuperherosV1Controller(ILogger<SuperherosV1Controller> logger, IGetAllSuperherosQuery getAllSuperheros, IGetSuperheroByIdQuery getSuperheroByIdQuery)
         {
             _logger = logger;
             _getAllSuperheros = getAllSuperheros;
