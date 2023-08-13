@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "superheros.console.tests", "superheros.console.tests\superheros.console.tests.csproj", "{323773FD-D414-4163-B675-94B1494F1F20}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "superheros.console", "superheros.console\superheros.console.csproj", "{63EE83FA-3EA0-4BAA-B5DF-79AF621F993B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{323773FD-D414-4163-B675-94B1494F1F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323773FD-D414-4163-B675-94B1494F1F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323773FD-D414-4163-B675-94B1494F1F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323773FD-D414-4163-B675-94B1494F1F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EE83FA-3EA0-4BAA-B5DF-79AF621F993B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EE83FA-3EA0-4BAA-B5DF-79AF621F993B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EE83FA-3EA0-4BAA-B5DF-79AF621F993B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EE83FA-3EA0-4BAA-B5DF-79AF621F993B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99DE3AE3-BD48-437C-B794-3905B27E3DCA}
+	EndGlobalSection
+EndGlobal
