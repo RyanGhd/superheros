@@ -36,11 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fixtures\" />
-    <Folder Include="Services\Platform\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\superheros.server\superheros.server.csproj" />
   </ItemGroup>
 

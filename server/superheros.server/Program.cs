@@ -5,7 +5,6 @@ using NLog;
 using NLog.Web;
 using superheros.server;
 using superheros.server.Services;
-using superheros.server.Services.Queries.SuperheroQueries;
 using System;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -29,8 +28,6 @@ try
     var app = builder.Build();
 
     startup.Configure(app,builder.Environment);
-
-    var sp = app.Services.GetService(typeof(IGetAllSuperherosQuery));
 
     app.Run();
 }
