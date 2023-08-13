@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using superheors.console.Services;
 using superheors.console.Services.RateLimiting;
 using superheros.console.Services.RateLimiting;
 

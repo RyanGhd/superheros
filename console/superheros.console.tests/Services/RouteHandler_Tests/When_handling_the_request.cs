@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using NuGet.Frameworks;
 using NUnit.Framework;
-using superheors.console.Services;
 using superheors.console.Services.Router;
+using superheros.console.Services;
 
 namespace superheros.console.tests.Services.RouteHandler_Tests;
 

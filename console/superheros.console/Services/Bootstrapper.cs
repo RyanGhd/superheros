@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using superheors.console.Services.Router;
-using System.Linq;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
-namespace superheors.console.Services;
+
+namespace superheros.console.Services;
 
 public class Bootstrapper
 {
@@ -15,11 +15,16 @@ public class Bootstrapper
         if (Bootstrapper.ServiceProvider != null)
             return;
 
+    
+        var builder= new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+        var config = builder.Build();
+    
         var containerBuilder = new ContainerBuilder();
 
-        containerBuilder.RegisterType<RouteToFirstWebsiteDecision>().As<IRouterDecision>().SingleInstance();
-        containerBuilder.RegisterType<RouteToSecondWebsiteDecision>().As<IRouterDecision>().SingleInstance();
-        containerBuilder.RegisterType<RouteHandler>().As<IRouteHandler>();
+        containerBuilder.RegisterInstance(config).As<IConfiguration>().SingleInstance();
 
         var container = containerBuilder.Build();
 
