@@ -10,9 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Logging\**" />
     <Compile Remove="Services\Commands\**" />
+    <Content Remove="Logging\**" />
     <Content Remove="Services\Commands\**" />
+    <EmbeddedResource Remove="Logging\**" />
     <EmbeddedResource Remove="Services\Commands\**" />
+    <None Remove="Logging\**" />
     <None Remove="Services\Commands\**" />
   </ItemGroup>
 
