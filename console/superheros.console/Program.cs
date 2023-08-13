@@ -1,9 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Configuration;
-using superheros.console.Services;
+using superheros.console;
 
 new Bootstrapper().Bootstrap();
- var paramline = Console.ReadLine();
+
+Console.WriteLine($"Please write your input: ");
+
+var paramline = Console.ReadLine();
 
 Console.WriteLine($"input : {paramline}");

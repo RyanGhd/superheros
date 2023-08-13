@@ -3,25 +3,25 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
 
-namespace superheros.console.Services;
+namespace superheros.console;
 
 public class Bootstrapper
 {
-    public static IServiceProvider? ServiceProvider { get;private set; }
- 
+    public static IServiceProvider? ServiceProvider { get; private set; }
+
 
     public void Bootstrap()
     {
-        if (Bootstrapper.ServiceProvider != null)
+        if (ServiceProvider != null)
             return;
 
-    
-        var builder= new ConfigurationBuilder()
+
+        var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
         var config = builder.Build();
-    
+
         var containerBuilder = new ContainerBuilder();
 
         containerBuilder.RegisterInstance(config).As<IConfiguration>().SingleInstance();
@@ -30,6 +30,6 @@ public class Bootstrapper
 
         var serviceLocator = new AutofacServiceProvider(container);
 
-        Bootstrapper.ServiceProvider = serviceLocator;
+        ServiceProvider = serviceLocator;
     }
 }
