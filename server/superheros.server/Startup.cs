@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using NLog.Extensions.Logging;
 using superheros.server.Services.Platform;
 using superheros.server.Services.Queries.SuperheroQueries;
 using IHostingEnvironment = Microsoft.Extensions.Hosting.IHostingEnvironment;
@@ -24,6 +25,11 @@ public class Startup
         services.AddControllers();
         services.AddEndpointsApiExplorer(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddSwaggerGen();
+        services.AddLogging(lb =>
+        {
+            var nlogConfig = new NLog.Config.XmlLoggingConfiguration("nlog.config");
+            lb.AddNLog(nlogConfig);
+        });
     }
 
     // This is the default if you don't have an environment specific method.
@@ -31,9 +37,12 @@ public class Startup
     {
         builder.RegisterType<GetAllSuperherosQuery>().As<IGetAllSuperherosQuery>().SingleInstance();
         builder.RegisterType<GetSuperheroByIdQuery>().As<IGetSuperheroByIdQuery>().SingleInstance();
-        
+
         builder.RegisterType<CacheProvider>().As<ICacheProvider>().SingleInstance();
         builder.RegisterType<MemoryCache>().As<IMemoryCache>().SingleInstance();
+
+        builder.RegisterInstance(Configuration).As<IConfiguration>().SingleInstance();
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -57,7 +66,9 @@ public class Startup
         });
 
         app.UseStaticFiles();
+
+        app.UseHttpLogging();
     }
 
-     
+
 }

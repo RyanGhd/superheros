@@ -8,7 +8,7 @@ public class Biography
     {
 
     }
-    public Biography(string fullName, string alterEgos, List<string> aliases, string placeOfBirth, string firstAppearance, string publisher, string alignment)
+    public Biography(string? fullName, string? alterEgos, List<string>? aliases, string? placeOfBirth, string? firstAppearance, string? publisher, string? alignment)
     {
         FullName = fullName;
         AlterEgos = alterEgos;
@@ -19,11 +19,11 @@ public class Biography
         Alignment = alignment;
     }
 
-    public string FullName { get;private set; }
-    public string AlterEgos { get; private set; }
-    public List<string> Aliases { get; private set; }
-    public string PlaceOfBirth { get; private set; }
-    public string FirstAppearance { get; private set; }
-    public string Publisher { get; private set; }
-    public string Alignment { get; private set; }
+    public string? FullName { get;private set; }
+    public string? AlterEgos { get; private set; }
+    public List<string>? Aliases { get; private set; }
+    public string? PlaceOfBirth { get; private set; }
+    public string? FirstAppearance { get; private set; }
+    public string? Publisher { get; private set; }
+    public string? Alignment { get; private set; }
 }

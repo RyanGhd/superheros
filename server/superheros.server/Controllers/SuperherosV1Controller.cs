@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using superheros.server.Model;
 using superheros.server.Services.Queries.SuperheroQueries;
 
@@ -41,6 +42,14 @@ namespace superheros.server.Controllers
                 response = this.StatusCode(200, result);
 
             return response;
+        }
+
+        [HttpPost()]
+        public async Task<ActionResult<Superhero>> PostAsync([FromHeader(Name = "x-trace-id")] string traceId, [FromBody(EmptyBodyBehavior = EmptyBodyBehavior.Allow)] Superhero superhero)
+        {
+            await Task.CompletedTask;
+
+            return this.StatusCode(200);
         }
     }
 }
