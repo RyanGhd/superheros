@@ -5,12 +5,6 @@ namespace superheros.server.Model;
 
 public class Superhero
 {
-    // used for object mapping 
-    // ReSharper disable once UnusedMember.Local
-    //private Superhero()
-    //{
-        
-    //}
     public Superhero(int id, string? name, string? slug, Powerstats? powerStats, Appearance? appearance, Biography? biography, Work? work, SuperheroConnection? connections, Images? images)
     {
         Id = id;

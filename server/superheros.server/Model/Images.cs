@@ -3,11 +3,6 @@ namespace superheros.server.Model;
 
 public class Images
 {
-    // used for mapping
-    private Images()
-    {
-        
-    }
     public Images(string? xs, string? sm, string? md, string? lg)
     {
         Xs = xs;

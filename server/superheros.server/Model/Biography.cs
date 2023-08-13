@@ -2,12 +2,6 @@ namespace superheros.server.Model;
 
 public class Biography
 {
-    // used for object mapping 
-    // ReSharper disable once UnusedMember.Local
-    private Biography()
-    {
-
-    }
     public Biography(string? fullName, string? alterEgos, List<string>? aliases, string? placeOfBirth, string? firstAppearance, string? publisher, string? alignment)
     {
         FullName = fullName;

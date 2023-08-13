@@ -2,12 +2,6 @@ namespace superheros.server.Model;
 
 public class Appearance
 {
-    // used for object mapping 
-    // ReSharper disable once UnusedMember.Local
-    private Appearance()
-    {
-        
-    }
     public Appearance(string? gender, string? race, List<string>? height, List<string>? weight, string? eyeColor, string? hairColor)
     {
         Gender = gender;

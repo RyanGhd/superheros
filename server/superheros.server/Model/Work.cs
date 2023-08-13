@@ -2,13 +2,6 @@ namespace superheros.server.Model;
 
 public class Work
 {
-    // used for object mapping 
-    // ReSharper disable once UnusedMember.Local
-    private Work()
-    {
-
-    }
-
     public Work(string? occupation, string? @base)
     {
         Occupation = occupation;
